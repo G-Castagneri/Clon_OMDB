@@ -21,3 +21,6 @@
 - Ver el perfil de un usuario con sus películas favoritas.
 
 Para más información busquen en [Pledu](https://pledu.plataforma5.la/bootcamp/omdb/apikey-0ed7ccdb)
+
+
+/// api key: cc4627c5 (nueva) ///
