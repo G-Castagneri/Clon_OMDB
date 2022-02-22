@@ -20,14 +20,14 @@ function Movie() {
   }, [movie]);
 
   return (
-    <div className="container" style={{ width: "18rem" }}>
-      <Card style={{ border: "0" }}>
-        <Card.Img variant="top" src={movieID.Poster} />
+    <div className="container" >
+      <Card className="color" style={{ border: "0" }}>
+        <Card.Img className="imagen" variant="top" src={movieID.Poster} />
         <Card.Body
           style={{
             color: "white",
-            backgroundColor: "rgba(88, 88, 88, 0.651)",
-            borderColor: "rgba(88, 88, 88, 0.651)",
+            backgroundColor: "rgb(31, 70, 128)",
+            borderColor: "rgb(31, 70, 128)",
           }}
         >
           <Card.Title>{movieID.Title}</Card.Title>

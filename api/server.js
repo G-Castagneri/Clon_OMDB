@@ -16,8 +16,6 @@ const models = require("./models");
 const db = require("./db/db"); //crear base de datos/
 const router = require("./routes");
 
-
-
 // logging middleware
 app.use(volleyball);
 app.use(cors());
@@ -43,7 +41,7 @@ passport.use(
       passwordField: "password",
     },
     function (email, password, done) {
-      User.findOne({where: {email} })
+      User.findOne({ where: { email } })
         .then((user) => {
           if (!user) {
             return done(null, false); // user not found
@@ -69,7 +67,7 @@ passport.deserializeUser(function (id, done) {
 });
 
 // parsing middleware
-app.use(express.urlencoded({ extended: true }));  /* es true o false?????? */
+app.use(express.urlencoded({ extended: true })); /* es true o false?????? */
 app.use(express.json());
 //app.use(express.json());
 app.use("/", router);
@@ -88,7 +86,7 @@ app.use((err, req, res, next) => {
   res.status(500).send(err.message);
 });
 
-db.sync({ force: false  })
+db.sync({ force: false })
   .then(function () {
     // Recién ahora estamos seguros que la conexión fue exitosa
     app.listen(3001, () =>

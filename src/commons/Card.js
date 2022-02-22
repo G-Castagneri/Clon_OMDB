@@ -3,7 +3,9 @@ import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../assets/card.css";
 
+
 const Cards = ({ moviesList }) => {
+  const user = JSON.parse(localStorage.getItem("user"));
   return (
     <div
       className="container"
@@ -20,13 +22,18 @@ const Cards = ({ moviesList }) => {
                     src={data.Poster}
                   />
                   <Card.Body>
-                    <Card.Title className="titulo">{data.Title}</Card.Title>
+                    <Card.Title className="gradiente titulo">
+                      {data.Title}
+                    </Card.Title>
                   </Card.Body>
                   <Link to={`/movie/${data.imdbID}`}>
                     <Button className="boton" data={data}>
                       Mas info
                     </Button>
                   </Link>
+                  <Button className="boton" type="submit" >
+                    favoritos
+                  </Button>
                 </Card>
               </div>
             );

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../commons/Navbar";
 import { useState } from "react";
 import { searchMovies } from "../state/movies";
 
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
 
 function NavbarContainer() {
   const dispatch = useDispatch();
@@ -19,8 +20,10 @@ function NavbarContainer() {
     searchMovies(movies);
   };
 
-  const user = useSelector((state) => state.user);
-  console.log("USeRRR", user);
+  const usuario = useSelector((state) => state.user); //????
+
+  const user = JSON.parse(localStorage.getItem("user"));
+
   return (
     <div>
       <Navbar

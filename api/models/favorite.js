@@ -9,6 +9,10 @@ Favorite.init(
     title: {
       type: Sequelize.STRING,
     },
+    movieId:{
+      type: Sequelize.STRING,
+    }
+    
   },
   { sequelize: db, modelName: "favorite" }
 );

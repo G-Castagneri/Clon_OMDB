@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { logoutUser } from "../state/user";
+import { Link, useHistory } from "react-router-dom";
+import { Text } from "@chakra-ui/react";
+import "../assets/home.css";
 import "../assets/navbar.css";
 import "../assets/card.css";
+import { useEffect } from "react";
+import { logoutUser } from "../state/user";
+import { getFavorite } from "../state/favorite";
 
 function Navbar({ onChangeHandler, onSubmitHandler, user }) {
   const dispatch = useDispatch();
+  const history = useHistory();
 
+  //hago dispach de la funcion de redux
+  const logout = () => {
+    dispatch(logoutUser()).then(() => history.push("/"));
+  };
+//hago dispatch de la funcion de redux pidiendo todos los fav de ese user
+  const onClickGetFavorite = (user) => {
+    dispatch(getFavorite(user));
+  };
+  
   return (
     <div className="navbar">
       <div>
@@ -16,6 +30,7 @@ function Navbar({ onChangeHandler, onSubmitHandler, user }) {
           Home
         </Button>
       </div>
+
       <div>
         <Form className="d-flex" onSubmit={(e) => onSubmitHandler(e)}>
           <Form.Control
@@ -32,11 +47,31 @@ function Navbar({ onChangeHandler, onSubmitHandler, user }) {
           </Link>
         </Form>
       </div>
-      {user.login ? (
+      <div>
+        <Link to="#">
+          <Button className="boton" type="submit">
+            Movie
+          </Button>
+        </Link>
+        <Link to="#">
+          <Button className="boton" type="submit">
+            Series
+          </Button>
+        </Link>
+      </div>
+      {user ? (
         <div>
-          <Button className="boton">{user.email}</Button>
+          <Link to="/favorite">
+            <Button
+              className="boton"
+              onClick={() => onClickGetFavorite(user.id)}
+            >
+              Favoritos
+            </Button>
+          </Link>
+          <Button className="boton">{user?.email}</Button>
           <Link to="/">
-            <Button className="boton" onClick={() => dispatch(logoutUser())}>
+            <Button className="boton" onClick={logout}>
               Logout
             </Button>
           </Link>

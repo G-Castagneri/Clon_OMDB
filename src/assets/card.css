@@ -19,20 +19,26 @@
 }
 
 .imagen {
+  
   height: 430px;
+  border-radius: 10% !important
+ 
 }
 
 .color {
   color: white !important;
-  background-color: rgb(146, 146, 146) !important;
-  border-color: rgba(146, 146, 146) !important;
+  background-color: rgb(31, 70, 128) !important;
+  border-color: rgb(31, 70, 128)!important;
   width: 18rem !important;
   margin: 30px !important;
   text-align: center !important;
 }
 
 .titulo {
+  font-size: 30px !important;
   overflow: hidden !important;
   white-space: nowrap !important;
   text-overflow: ellipsis !important;
 }
+
+

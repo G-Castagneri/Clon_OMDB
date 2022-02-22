@@ -13,11 +13,11 @@ function LoginContainer() {
   const [password, setUserPassword] = useState("");
   //pedido a axios //
   const onChangeHandlerEmail = (e) => {
-    console.log("EMAILL", e.target.value);
+   
     setUserEmail(e.target.value);
   };
   const onChangeHandlerPassword = (e) => {
-    console.log("password", e.target.value);
+    
     setUserPassword(e.target.value);
   };
 

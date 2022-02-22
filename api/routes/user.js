@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require("../models/user");
 const passport = require("passport");
 
-router.get("/", (req, res, next) => {
+router.get("/:id", (req, res, next) => {
   res.send("USER!!!");
 });
 
@@ -23,7 +23,7 @@ router.get("/users", (req, res, next) => {
     .then((users) => res.send(users))
 }) 
 
-// pasport login
+// passport login
 router.post("/login", passport.authenticate("local"), function (req, res) {
   res.send(req.user);
 });
