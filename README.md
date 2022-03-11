@@ -1,6 +1,6 @@
-![logop5](https://p5-hall-of-fame.s3.amazonaws.com/p5logo.png)
 
-# 25 - OMDB
+
+OMDB
 
 ### Must have.
 
@@ -17,10 +17,8 @@
 
 ### Nice to have.
 
-- Buscar Usuarios.
+
 - Ver el perfil de un usuario con sus películas favoritas.
 
-Para más información busquen en [Pledu](https://pledu.plataforma5.la/bootcamp/omdb/apikey-0ed7ccdb)
 
 
-/// api key: cc4627c5 (nueva) ///
